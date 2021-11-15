@@ -1,0 +1,93 @@
+html, body {
+  margin: 0;
+}
+
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: inherit;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: -4px;
+  right: 5px;
+  color: transparent;
+  text-shadow: 0 0 3px white;
+}
+
+#count {
+  font-size: 1rem;
+  position: absolute;
+  margin: 0;
+  top: 40px;
+  right: 10px;
+  color: whitesmoke;
+}
+
+h2 {
+  font-size: 3.5rem;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 100px;
+  color: transparent;
+  text-shadow: 0 0 1px white;
+}
+
+
+form {
+  font-size: 1.5rem;
+  display: inline-block;
+  position: relative;
+  top: 300px;
+  color: whitesmoke;
+}
+
+.textplayer {
+  margin-bottom: 20px;
+}
+
+.boxed label {
+  display: inline-block;
+  width: 50px;
+  padding: 10px;
+  background-color: #49535C;
+  border: solid 3px #ccc;
+  border-radius: 10px;
+  transition: all 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+
+.boxed input[type="radio"] {
+  display: none;
+}
+
+.boxed input[type="radio"]:checked + label {
+  border: solid 3px green;
+  background-color: #3A424A;
+}
+
+#playbtn{
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  display: block;
+  position: relative;
+  margin: auto;
+  top: 400px;
+  padding: 10px 20px;
+  background-color: #49535C;
+  border-radius: 10px;
+  color: whitesmoke;
+  cursor: pointer;
+}

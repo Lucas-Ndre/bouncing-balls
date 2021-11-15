@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bouncing balls</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1></h1>
+  <div id="count">
+    <p id="total-count"></p>
+  </div>
+  <div class="init">
+    <h2>Bouncing balls game</h2>
+
+    <form class="boxed">
+      <div class="textplayer">Number of players :</div>
+      <input type="radio" id="oneplayer" name="playernb" value="1" checked>
+      <label for="oneplayer">1P</label>
+
+      <input type="radio" id="twoplayers" name="playernb" value="2">
+      <label for="twoplayers">2P</label>
+    </form>
+
+    <button id="playbtn">PLAY !</button>
+  </div>
+
+  <canvas></canvas>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
