@@ -23,31 +23,33 @@ function random(min, max) {
     return num;
 }
 
-function Shape(x, y, velX, velY) {
-    this.x = x;
-    this.y = y;
-    this.velX = velX;
-    this.velY = velY;
-    this.exists = true;
+class Shape {
+    constructor(x, y, velX, velY) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.exists = true;
+    }
+    update() {                  //added to Shape class to have the possiblity to create other type of shape than Ball
+        if (this.x + this.size >= width) {
+            this.velX = -(this.velX);
+        }
+        if (this.y + this.size >= height) {
+            this.velY = -(this.velY);
+        }
+        if (this.x - this.size <= 0) {
+            this.velX = -(this.velX);
+        }
+        if (this.y - this.size <= 0) {
+            this.velY = -(this.velY);
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+    }
 }
 
-Shape.prototype.update = function () {
-    if (this.x + this.size >= width) {
-        this.velX = - (this.velX)
-    }
-    if (this.y + this.size >= height) {
-        this.velY = - (this.velY)
-    }
-    if (this.x - this.size <= 0) {
-        this.velX = - (this.velX)
-    }
-    if (this.y - this.size <= 0) {
-        this.velY = - (this.velY)
-    }
-
-    this.x += this.velX;
-    this.y += this.velY;
-}
 
 
 
