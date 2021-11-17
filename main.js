@@ -81,13 +81,17 @@ class Ball extends Shape {
             if (dist < (this.size + circles[j].size)) {
                 this.exists = false;
                 if (circles.length === 2) {
-                    if (j === 0) {
-                        redScore++;
+                    switch (j) {
+                        case 0:                 //collision with the first Evil circle
+                            redScore++;
+                            break;
+                        case 1:                 //collision with the second Evil circle
+                            blueScore++;
+                            break;
+
+                        default:
+                            break;
                     }
-                    else if (j === 1) {
-                        blueScore++;
-                    }
-                    else { console.log('error : circles length in collisionDetect') }
                 }
             }
         }
