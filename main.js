@@ -176,16 +176,47 @@ function updateBallCount() {
 
 function initialize() {
     document.body.style.background = 'rgb(28, 40, 51)';
-    for (const nbplayer of playerChoice) {
-        if (nbplayer.checked) {
-            playerNumber = parseInt(nbplayer.value);
-        }
-    }
     playBtn.addEventListener('click', launchGame);
 }
 
 
 function launchGame() {
+    for (const nbplayer of playerChoice) {
+        if (nbplayer.checked) {
+            playerNumber = parseInt(nbplayer.value);
+        }
+    };
+
+    if (playerNumber === 2) {
+        redScore = 0;
+        blueScore = 0;
+    };
+    
+    for (let i = 0; i < playerNumber; i++) {
+        switch (i) {
+            case 0:
+                color = 'red';
+                break;
+            case 1:
+                color = 'blue';
+                break;
+            default:
+                console.log('numberplayer incorrect in circles definition')
+        }
+        let size = 10;
+        let vel = 12;
+        let circle = new EvilCircle(
+            random(size, width - size),
+            random(size, height - size),
+            vel,
+            vel,
+            color,
+            i,
+            size
+        );
+        circles.push(circle);
+    };
+    
     document.body.removeChild(removableContent);
     gameName.textContent = 'bouncing balls';
     if (circles.length === 2) {
@@ -236,29 +267,5 @@ while (balls.length < 25) {
 };
 
 let circles = [];
-for (let i = 0; i < playerNumber; i++) {
-    if (i === 0) {
-        color = 'red';
-    }
-    else if (i === 1) {
-        color = 'blue';
-    }
-    else { console.log('numberplayer incorrect in circles definition') }
-    let size = 10;
-    let vel = 12;
-    let circle = new EvilCircle(
-        random(size, width - size),
-        random(size, height - size),
-        vel,
-        vel,
-        color,
-        i,
-        size
-    );
-    circles.push(circle);
-};
-
-if (playerNumber === 2) {
-    var redScore = 0;
-    var blueScore = 0;
-}
+let redScore;
+let blueScore;
